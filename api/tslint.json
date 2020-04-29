@@ -1,0 +1,35 @@
+{
+    "extends": [
+      "tslint:recommended"
+    ],
+    "rules": {
+      "array-type": [
+        true,
+        "generic"
+      ],
+      "indent": [true, "tabs", 4],
+      "no-string-literal": false,
+      "object-literal-shorthand": [
+        true,
+        "always"
+      ],
+      "object-literal-sort-keys" : false,
+      "ordered-imports": [
+        true,
+        {
+          "import-sources-order": "any",
+          "named-imports-order": "case-insensitive"
+        }
+      ],
+      "only-arrow-functions": false,
+      "interface-name": false,
+      "max-classes-per-file": false,
+      "no-var-requires": false,
+      "ban-types": false,
+      "no-unused-expression": true,
+      "semicolon": [
+        true,
+        "always"
+      ]
+    }
+  }

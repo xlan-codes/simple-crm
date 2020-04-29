@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Emergency Report</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content padding> -->
+  
+  <ion-content padding>
+   
+    <form 
+       [formGroup]="form" 
+       (ngSubmit)="sendMessage()">
+ 
+       <ion-list>
+ 
+ 
+          <ion-item margin-bottom> 
+             <ion-label>To:</ion-label> 
+             <ion-input
+                type="email"
+                formControlName="to"></ion-input> 
+          </ion-item>
+ 
+ 
+          <ion-item margin-bottom> 
+             <ion-label>Cc:</ion-label> 
+             <ion-input
+                type="email"
+                formControlName="cc"></ion-input> 
+          </ion-item>
+ 
+ 
+          <ion-item margin-bottom> 
+             <ion-label>Bcc:</ion-label> 
+             <ion-input
+                type="email"
+                formControlName="bcc"></ion-input> 
+          </ion-item>
+ 
+ 
+          <ion-item text-center> 
+             <ion-button
+                style="margin: 0; width: 100%;"
+                color="primary"
+                text-center
+                block 
+                (click)="takePicture()">Attachment</ion-button> 
+          </ion-item>
+ 
+ 
+          <ion-item margin-bottom> 
+             <ion-label>Subject:</ion-label> 
+             <ion-input
+                type="string"
+                formControlName="subject"></ion-input> 
+          </ion-item>
+ 
+ 
+          <ion-item margin-bottom> 
+             <ion-label>Message:</ion-label> 
+             <ion-textarea
+                formControlName="message"></ion-textarea> 
+          </ion-item>
+    
+    
+          <ion-button style="text-align:center; width:100%;"
+             color="primary"
+             text-center
+             block [disabled]="!form.valid">Send your message</ion-button>
+       </ion-list>
+       <ion-virtual-scroll [items]="images" approxItemHeight="50px">
+        <ion-card *virtualItem="let image;" width="50px" height="50px">
+          <img src="{{ getTrustImg(image) }}" width="50px" height="50px"/>
+        </ion-card>
+      </ion-virtual-scroll>       
+    </form>
+ </ion-content>
+  <!-- <ion-card>
+     <ion-buttons> -->
+      <!-- <ion-button (click)="takePicture()">Capture Image</ion-button>
+      <ion-button (click)="sendEmail()">Send Email</ion-button> -->
+    <!-- </ion-buttons> -->
+
+    <!-- <ion-input type="text" [(ngModel)]="emergencyReportSubject" placeholder="Enter job number"></ion-input>
+    
+    <ion-card-content >
+      <ion-card-header class="ion-text-center">Current image</ion-card-header>
+      <ion-virtual-scroll [items]="images" approxItemHeight="320px">
+        <ion-card *virtualItem="let image;">
+          <div>
+            <img src="{{ getTrustImg(image) }}" />
+          </div> -->
+        <!-- <ion-card-header>
+          <ion-card-title>{{ item.name }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>{{ item.content }}</ion-card-content> -->
+        <!-- </ion-card> -->
+        <!-- <img src="{{ getTrustImg(image) }}" width="50px" height="50px"/> -->
+      <!-- </ion-virtual-scroll>
+      
+    </ion-card-content>
+  </ion-card> -->
+<!-- </ion-content> -->

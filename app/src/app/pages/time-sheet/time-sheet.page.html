@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Time Sheet</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openModal()"><ion-icon name="filter-outline"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <!-- <ngx-datatable 
+      class="material"
+      [messages.totalMessage]=""
+      [limit]="8" 
+      [rows]="rows" 
+      [rowHeight]="'auto'" 
+      [columns]="columns"
+      [columnMode]="'force'" 
+      [sortType]="'multi'" 
+      [headerHeight]="50" 
+      [footerHeight]="50">
+    </ngx-datatable> -->
+    <ngx-datatable 
+      class="material"
+      [messages.totalMessage]=""
+      [limit]="8" 
+      [rows]="rows" 
+      [rowHeight]="'auto'" 
+      [columnMode]="'force'" 
+      [sortType]="'multi'" 
+      [headerHeight]="50" 
+      [footerHeight]="50">
+
+      <ngx-datatable-column name="Date">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.StartHour | date: 'dd-MM-yyyy'}}
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column name="JobNumber">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.Job?.JobNumber}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Hour">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.StartHour | date: 'HH:mm:ss'}}
+        </ng-template>
+      </ngx-datatable-column>
+      <!-- <ngx-datatable-column name="End Hour">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.EndHour | date: 'HH:mm:ss'}}
+        </ng-template>
+      </ngx-datatable-column> -->
+
+      <ngx-datatable-column name="End Hour">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.Type}}
+        </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
+
+  </div>
+</ion-content>

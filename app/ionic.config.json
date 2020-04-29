@@ -1,0 +1,7 @@
+{
+  "name": "ibx-task-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

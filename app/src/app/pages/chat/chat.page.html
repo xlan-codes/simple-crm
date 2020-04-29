@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="light">{{roomCode}}</ion-title>
+
+  </ion-toolbar>
+  <ion-fab  vertical="end" horizontal="end" slot="fixed">
+    <ion-fab-button >
+      <ion-icon name="settings"></ion-icon>
+    </ion-fab-button>
+
+    <ion-fab-list side="center">
+      <ion-fab-button > 
+        <label for="input" style="font-size: 20pt; padding: 30px">
+          <ion-icon name="images-outline"></ion-icon>        </label>
+        <input id="input" multiple placeholder="Type a message" [(ngModel)]="inp_text" type="file" class="hideInput" (change)="changeListener($event)">
+      </ion-fab-button>    </ion-fab-list>
+    <ion-fab-list side="start">
+      <ion-fab-button ><ion-icon name="help"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-header>
+
+<ion-content  class="contentBg" #content id="chat-parent" overflow-scroll="true" (ionScrollStart)="logScrollStart()"
+  (ionScroll)="logScrolling($event)">
+  <ion-refresher slot="fixed" (ionRefresh)="rp.doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div>
+    <div id="chat-container">
+      <span class="line-style"></span>
+      <hr>
+      <div class="message-wrap">
+        <div *ngFor="let msg of msgList;let i = index; let first = first; let last = last" class="message" #content>
+
+          <div class="message-left" *ngIf="msg?.User !== User?.FirstName" #content>
+            <!-- <img class="user-img" [src]="msg.userAvatar"> -->
+            <div class="msg-detail">
+              <!-- <div class="msg-content">
+                <p class="line-breaker">{{msg?.Message}} </p>
+                <i slot="end" color='light' class='time-chat'>27/02/20, 20:12:10</i>
+              </div> -->
+              <ion-item-sliding >
+                <ion-item class="msg-content"  >
+                  <ion-label>
+                    <p class="line-breaker  ">{{msg?.Message}}</p>
+                  </ion-label>
+                  <ion-note slot="end">
+                    {{msg?.Created | date: 'short'}}
+                  </ion-note>
+                </ion-item>
+                <ion-item-options side="start">
+                  <ion-item-option color="danger">
+                    <ion-icon slot="icon-only" name="trash"></ion-icon>
+                  </ion-item-option>
+                </ion-item-options>
+              </ion-item-sliding>
+            </div>
+          </div>
+          <div class="message-right" *ngIf="msg?.User === User?.FirstName">
+            <!-- <ion-spinner name="dots" *ngIf="msg.status === 'pending'"></ion-spinner> -->
+            <div class="msg-detail">
+              <div class="msg-info">
+              </div>
+              <div >
+                <ion-item-sliding >
+                  <ion-item class="msg-content" >
+                    <ion-label>
+                      <p class="line-breaker">{{msg?.Message}}</p>
+                    </ion-label>
+                    <ion-note slot="end">
+                      {{msg?.Created | date: 'short'}}
+                    </ion-note>
+                  </ion-item>
+                  <ion-item-options side="end">
+                    <ion-item-option color="danger">
+                      <ion-icon slot="icon-only" name="trash"></ion-icon>
+                    </ion-item-option>
+                  </ion-item-options>
+                </ion-item-sliding>
+      
+                <!-- <i slot="end" color='light' class='time-chat'>27/02/20, 20:12:14</i> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</ion-content>
+
+<ion-footer class="footer">
+  <ion-toolbar class="footerSections">
+    <div class="containerFooter">
+      <div class="inputConatiner">
+        <ion-input class="placeholdertext inputMessage inputBg" type="text" placeholder="Type a message" [(ngModel)]="message"
+          autofocus="true" ></ion-input>
+          
+
+      </div><ion-row>
+      <div class="send-button-parent">
+        <ion-button (click)="sendMsg()" class="sendBtn" color="primary">
+          <ion-icon class="sendBtn-icon" name="send" color="light"></ion-icon>
+        </ion-button>
+      </div></ion-row>
+    </div>
+  </ion-toolbar>
+</ion-footer>

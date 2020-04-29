@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="session">
+    <div class="ion-padding">
+      <h1>{{session.Job.JobNumber}}</h1>
+      <h6>{{session.Job.JobAddress}}</h6>
+      <span *ngFor="let track of session?.tracks" [class]="'session-track-'+track.toLowerCase()">{{track}}</span>
+      <p>{{session.TaskDescription}}</p><br/>
+      <ion-text color="medium">
+        {{session.StartHour | date: 'dd/MM/yyy HH:mm'}} &ndash; {{session.EndHour | date: 'dd/MM/yyy HH:mm'}}
+        <br /> {{session.Job.JobAddress}}
+      </ion-text>
+    </div>
+  
+    <ion-list>
+      <ion-item  routerLink="/chat/{{session.Job.JobNumber}}">
+        <ion-label color="primary">Chat</ion-label>
+      </ion-item>
+      <ion-item (click)="sessionClick(session, 'CheckIn')" button [hidden]="hideCheckIn">
+        <ion-label color="primary">Check-In</ion-label>
+      </ion-item>
+      <ion-item (click)="sessionClick(session, 'CheckOut')" [hidden]="!hideCheckIn"  button>
+        <ion-label color="primary">Check-Out</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

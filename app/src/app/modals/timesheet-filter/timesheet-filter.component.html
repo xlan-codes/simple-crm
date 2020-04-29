@@ -1,0 +1,31 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Time Sheet</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>From Date</ion-label>
+    <ion-datetime displayFormat="YYYY-MM-DD" placeholder="Select Date" [(ngModel)]="startDate"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>End Date</ion-label>
+    <ion-datetime displayFormat="YYYY-MM-DD" placeholder="Select Date" [(ngModel)]="endDate"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-grid>
+      <ion-row center>
+        <ion-col>
+          <ion-buttons style="text-align: center;">
+            <ion-button (click)="dismiss()" color="medium">Close</ion-button>
+            <ion-button (click)="apply()" color="dark">Apply</ion-button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+</ion-content>
+

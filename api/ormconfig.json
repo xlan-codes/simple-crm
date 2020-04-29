@@ -1,0 +1,9 @@
+{
+    "type": "mongodb",
+    "url": "mongodb+srv://admin:admin@cluster0-lhz3b.mongodb.net/test?retryWrites=true&w=majority",
+    "useNewUrlParser": true,
+    "synchronize": true,
+    "logging": ["query", "error"],
+    "useUnifiedTopology": true,
+    "entities": ["dist/repositories/entities/**/*.*"]
+  }

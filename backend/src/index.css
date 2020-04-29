@@ -1,0 +1,52 @@
+/* @media only screen and (min-width: 990px) { */
+    .ant-radio-group .ant-radio-group-outline .ant-radio-group-default {
+      margin-right: 257px !important;
+    }
+  /* } */
+
+  .navBarText {
+    margin-left: 10px !important;
+    font-size: 17px;
+    margin-top: 13px;
+  }
+  .chat-list {
+    height: 68vh;
+    background-color: white;
+  }
+  .message-list {
+    height: 68vh;
+    border-left: 2px solid #f4f4f4;
+    border-right: 2px solid #f4f4f4;
+  }
+  .user-list {
+    height: 68vh;
+    overflow-y: scroll;
+  }
+  .rce-container-clist {
+    height: 80vh;
+  }
+
+  .message {
+    margin-top: 10px;
+  }
+  .rce-mbox-text {
+    padding: 3px;
+  }
+  .rce-mbox {
+    background-color: antiquewhite !important;
+  }
+  .rce-mbox-right-notch {
+    fill: aliceblue !important;
+  }
+  .rce-mbox-left-notch {
+    fill: antiquewhite !important;
+  }
+  .rce-mbox-right {
+    background-color: aliceblue !important;
+  }
+  body {
+    background-color: #e6e6e6;
+  }
+  .form-group {
+    border: 2px solid #f4f4f4;
+  }
