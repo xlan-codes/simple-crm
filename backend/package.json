@@ -32,7 +32,7 @@
     "mdbreact": "^4.25.6",
     "moment": "^2.24.0",
     "multiselect-react-dropdown": "^1.4.8",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-advanced-datetimerange-picker": "^1.0.11",
