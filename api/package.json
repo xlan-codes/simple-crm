@@ -36,7 +36,7 @@
     "@nestjs/websockets": "^7.0.7",
     "@types/dotenv": "^8.2.0",
     "@types/socket.io": "^2.1.4",
-    "class-validator": "^0.12.2",
+    "class-validator": "^0.14.0",
     "compression": "^1.7.4",
     "dotenv": "^8.2.0",
     "express-rate-limit": "^5.1.1",
